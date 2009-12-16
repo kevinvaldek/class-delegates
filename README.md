@@ -50,8 +50,7 @@ By delegating the method *dispose* to *this.element*, you could call the method 
 
 By using *Class.Delegates* in the example above, you do not have to call *dispose* on the element anymore, but the class. Furthermore, *dispose* does not have to be implemented in the class.
 
-Anther example
--------
+Another example:
 
 As the values in the Delegates object can either be a *String* or an *Array*, you can pass an array of method names to be delegated to the element (which is the key of the Delegates object). A more advanced example, here we delegate multiple methods to different elements:
 
