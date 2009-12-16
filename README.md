@@ -9,7 +9,20 @@ Exposes methods as its own by delegating specified method calls directly to spec
 How to use
 ----------
 
-*Class.Delegates* allows you to delegate specified methods directly to elements within the class. This can come to handy when having classes that contain a reference to an actual Element in the DOM, like "this.element".
+All you have to do is to use *Delegates* in your class definition, and provide it with a object hash.
+Each key in the object is a delegation target. The value can be either the name of the delegated method, or an array of names if multiple methods should be delegated to the same element.
+
+	#JS
+	new Class({
+		Delegates: {
+			targetOne: 'methodName',
+			targetTwo: ['methodNameOne', 'methodNameTwo', 'methodNameThree']
+		}
+	});
+
+Example
+-------
+
 By delegating the method *dispose* to *this.element*, you could call the method *dispose* directly on the class instance instead of the element within the class (*myInstance.dispose* vs. *myInstance.element.dispose*).
 
 	#JS
@@ -24,9 +37,6 @@ By delegating the method *dispose* to *this.element*, you could call the method 
 
 *Class.Delegates* saves you the trouble of delegating the *dispose* method call manually.
 
-Example
--------
-
 	#JS
 	var MyClass = new Class({
 		Delegates: {
@@ -40,7 +50,8 @@ Example
 
 By using *Class.Delegates* in the example above, you do not have to call *dispose* on the element anymore, but the class. Furthermore, *dispose* does not have to be implemented in the class.
 
-Another example.
+Anther example
+-------
 
 As the values in the Delegates object can either be a *String* or an *Array*, you can pass an array of method names to be delegated to the element (which is the key of the Delegates object). A more advanced example, here we delegate multiple methods to different elements:
 
