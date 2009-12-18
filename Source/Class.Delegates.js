@@ -6,9 +6,10 @@ license: MIT-style
 
 authors:
 - Kevin Valdek
+- Perrin Westrich
 
 requires:
-  core/1.2.1:   '*'
+  core/1.2.4:   '*'
 
 provides:
   - Class.Delegates
@@ -16,13 +17,14 @@ provides:
 ...
 */
 
-Class.Mutators.Delegates = function(self, delegations) {
+Class.Mutators.Delegates = function(delegations) {
+	var self = this;
 	new Hash(delegations).each(function(delegates, target) {
 		$splat(delegates).each(function(delegate) {
-			self[delegate] = function() {
-				this[target][delegate].apply(this[target], arguments);
+			self.prototype[delegate] = function() {
+				var ret = this[target][delegate].apply(this[target], arguments);
+				return (ret === this[target] ? this : ret);
 			};
 		});
 	});
-	return self;
 };
