@@ -73,5 +73,5 @@ Changelog
 
 *2009-12-17 - tag: 0.5*
   Updates made by CrypticSwarm to get Class.Delegates to play nice with MooTools -core 1.2.4. Changes demod in MooShell can be found here: 
-http://mooshell.net/gzj9e/
+http://mooshell.net/gzj9e/1/
   Tag 0.1 works with -core 1.2.1 but is not compatible with 1.2.4.
