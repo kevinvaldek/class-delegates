@@ -9,7 +9,7 @@ authors:
 - Perrin Westrich
 
 requires:
-  core/1.2.4:   '*'
+  core/1.2.4:   'Class'
 
 provides:
   - Class.Delegates
