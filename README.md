@@ -71,6 +71,9 @@ By using *Class.Delegates* here, we can now call *setStyle*, *grab* and *inject*
 Changelog
 ---------
 
+*2010-02-03 - tag: 0.5.1*
+  Dependencies added by henrikh.
+
 *2009-12-17 - tag: 0.5*
   Updates made by CrypticSwarm to get Class.Delegates to play nice with MooTools -core 1.2.4. Changes demod in MooShell can be found here: 
 http://mooshell.net/gzj9e/1/
